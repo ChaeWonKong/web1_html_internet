@@ -1,0 +1,8 @@
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.54 KiB | 1.54 MiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/ChaeWonKong/web1_html_internet.git
+   0e5612b..d801e44  master -> master
