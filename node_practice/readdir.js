@@ -1,4 +1,4 @@
-const testFolder = '../web1/data/';
+const testFolder = './data';
 const fs = require('fs');
 
 fs.readdir(testFolder, function(err, filelist) {
