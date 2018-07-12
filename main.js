@@ -6,15 +6,10 @@ var app = http.createServer(function(request,response){
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
     var title = queryData.id;
-    
-    if(_url == '/'){
-      title = 'Welcome';
-    }
-    if(_url == '/favicon.ico'){
-      return response.writeHead(404);
-    }
-    response.writeHead(200);
-    fs.readFile(`data/${title}`, 'utf8', function(err, description){
+    var pathname = url.parse(_url, true).pathname;
+
+    if (pathname === '/') {
+      fs.readFile(`data/${title}`, 'utf8', function(err, description){
       var template = `
         <!doctype html>
         <html>
@@ -34,7 +29,12 @@ var app = http.createServer(function(request,response){
         </body>
         </html>
             `;
+      response.writeHead(200);
       response.end(template);
-    });
+      });
+    } else {
+      response.writeHead(404);
+      response.end('Not Found');
+    }
 });
 app.listen(3000);
