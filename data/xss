@@ -1,0 +1,6 @@
+start
+<h2>XSS</h2>
+<script>
+alert('merong!');
+</script>
+end
